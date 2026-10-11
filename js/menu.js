@@ -1,18 +1,3 @@
-const clean = s => s.replace(/\.html$/, '');
-const currentPage = clean(location.pathname.split('/').pop() || 'home');
-function setActiveMenu() {
-    document.querySelectorAll('#mainNav .navbar-nav .nav-link').forEach(link => {
-        const isCurrent = clean(link.getAttribute('href')) === currentPage;
-        link.classList.toggle('active', isCurrent);
-
-        if (isCurrent) {
-            link.setAttribute('aria-current', 'page');
-        } else {
-            link.removeAttribute('aria-current');
-        }
-    });
-}
-
 // menu.html
 fetch("menu.html")
     .then(res => res.text())
