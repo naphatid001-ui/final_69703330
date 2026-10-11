@@ -1,5 +1,5 @@
 const clean = s => s.replace(/\.html$/, '');
-const currentPage = clean(location.pathname.split('/').pop() || 'index');
+const currentPage = clean(location.pathname.split('/').pop() || 'home');
 function setActiveMenu() {
     document.querySelectorAll('#mainNav .navbar-nav .nav-link').forEach(link => {
         const isCurrent = clean(link.getAttribute('href')) === currentPage;
